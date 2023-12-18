@@ -1,0 +1,560 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<section class="pc">
+    <section class="cal" id="thiet_ke_web">
+        <p class="head-title">Thiết kế Website</p>
+        <div class="cal_infomation">
+            <div>
+                <p>
+                    <i>
+                        (1) KTVTKW: Kỹ thuật viên thiết kế Website<br/>
+                        (2) TKW: Thiết kế Website<br/>
+                        (3) TKGDW: Thiết kế giao diện Website<br/>
+                        (4) AMD: App Mobile Design<br/>
+                        (5) CVTKDHVW: Chuyên viên thiết kế đồ họa & Website
+                    </i>
+                </p>
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th>Mã Khóa Học</th>
+                        <th>Tên Lớp Học</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
+                        <th>Lịch khai giảng</th>
+                        <th>Địa điểm học</th>
+                        <th>Học Phí</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
+                    <tr>
+                        {% if course.type == webdesign %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname.name}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                        <td>{{course.price}}</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                Đăng Ký
+                            </button>
+
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="cal" id="lap_trinh_di_dong">
+        <p class="head-title">Lập trình di động</p>
+        <div class="cal_infomation">
+            <div>
+                <p>
+                    <i>
+                        (1) LTA: Lập trình Android <br/>
+                        (2) LTI: Lập trình IOS <br/>
+                        (3) RN: React Native
+                    </i>
+                </p>
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th>Mã Khóa Học</th>
+                        <th>Tên Lớp Học</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
+                        <th>Lịch khai giảng</th>
+                        <th>Địa điểm học</th>
+                        <th>Học Phí</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
+                    <tr>
+                        {% if course.type == mobiledevelopment %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname.name}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                        <td>{{course.price}}</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                    '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                Đăng Ký
+                            </button>
+
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="cal" id="tin_hoc_van_phong">
+        <p class="head-title">Tin học văn phòng</p>
+        <div class="cal_infomation">
+            <div>
+                <p>
+                    <i>
+                        (1) UDCNTTCB: Ứng dụng CNTT cơ bản <br/>
+                        (2) UDCNTTNC: Ứng dụng CNTT nâng cao <br/>
+                        (3) LTNCC: Luyện thi nhận chứng chỉ
+                    </i>
+                </p>
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th>Mã Khóa Học</th>
+                        <th>Tên Lớp Học</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
+                        <th>Lịch khai giảng</th>
+                        <th>Địa điểm học</th>
+                        <th>Học Phí</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
+                    <tr>
+                        {% if course.type == officeautomation %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname.name}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                        <td>{{course.price}}</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                Đăng Ký
+                            </button>
+
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="cal" id="tin_hoc_van_phong_mos">
+        <p class="head-title">Tin học văn phòng (MOS)</p>
+        <div class="cal_infomation">
+            <div>
+                <p>
+                    <i>
+                        (1) MOS_W: MOS WORD<br/>
+                        (2) MOS_E: MOS EXCEL<br/>
+                        (3) MOS_P: MOS POWERPOINT
+                    </i>
+                </p>
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th>Mã Khóa Học</th>
+                        <th>Tên Lớp Học</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
+                        <th>Lịch khai giảng</th>
+                        <th>Địa điểm học</th>
+                        <th>Học Phí</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
+                    <tr>
+                        {% if course.type == mosofficeautomation %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname.name}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                        <td>{{course.price}}</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                Đăng Ký
+                            </button>
+
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="cal" id="mang_may_tinh">
+        <p class="head-title">Mạng máy tính</p>
+        <div class="cal_infomation">
+            <div>
+                <p>
+                    <i>
+                        (1) NMQTMVANM: Nhập môn quản trị mạng và An ninh mạng<br/>
+                        (2) QTHTM: Quản trị hạ tầng mạng<br/>
+                        (3) QTHTM: Quản trị hệ thống mạng<br/>
+                        (4) ANM: An ninh mạng
+                    </i>
+                </p>
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th>Mã Khóa Học</th>
+                        <th>Tên Lớp Học</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
+                        <th>Lịch khai giảng</th>
+                        <th>Địa điểm học</th>
+                        <th>Học Phí</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
+                    <tr>
+                        {% if course.type == computernetworking %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname.name}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                        <td>{{course.price}}</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                Đăng Ký
+                            </button>
+
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</section>
+
+<section class="mobile">
+    <section class="cal" id="thiet_ke_web">
+        <p class="head-title">Thiết kế Website</p>
+        <div class="cal_infomation">
+            <div>
+                <p>
+                    <i>
+                        (1) KTVTKW: Kỹ thuật viên thiết kế Website<br/>
+                        (2) TKW: Thiết kế Website<br/>
+                        (3) TKGDW: Thiết kế giao diện Website<br/>
+                        (4) AMD: App Mobile Design<br/>
+                        (5) CVTKDHVW: Chuyên viên thiết kế đồ họa & Website
+                    </i>
+                </p>
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th>Mã Khóa Học</th>
+                        <th>Tên Lớp Học</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
+                        <th>Lịch khai giảng</th>
+                        <th>Địa điểm học</th>
+                        <th>Học Phí</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
+                    <tr>
+                        {% if course.type == webdesign %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname.name}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                        <td>{{course.price}}</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                Đăng Ký
+                            </button>
+
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="cal" id="lap_trinh_di_dong">
+        <p class="head-title">Lập trình di động</p>
+        <div class="cal_infomation">
+            <div>
+                <p>
+                    <i>
+                        (1) LTA: Lập trình Android <br/>
+                        (2) LTI: Lập trình IOS <br/>
+                        (3) RN: React Native
+                    </i>
+                </p>
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th>Mã Khóa Học</th>
+                        <th>Tên Lớp Học</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
+                        <th>Lịch khai giảng</th>
+                        <th>Địa điểm học</th>
+                        <th>Học Phí</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
+                    <tr>
+                        {% if course.type == mobiledevelopment %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname.name}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                        <td>{{course.price}}</td>
+                        <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                            Đăng Ký
+                        </button>
+
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="cal" id="tin_hoc_van_phong">
+        <p class="head-title">Tin học văn phòng</p>
+        <div class="cal_infomation">
+            <div>
+                <p>
+                    <i>
+                        (1) UDCNTTCB: Ứng dụng CNTT cơ bản <br/>
+                        (2) UDCNTTNC: Ứng dụng CNTT nâng cao <br/>
+                        (3) LTNCC: Luyện thi nhận chứng chỉ
+                    </i>
+                </p>
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th>Mã Khóa Học</th>
+                        <th>Tên Lớp Học</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
+                        <th>Lịch khai giảng</th>
+                        <th>Địa điểm học</th>
+                        <th>Học Phí</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
+                    <tr>
+                        {% if course.type == officeautomation %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname.name}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                        <td>{{course.price}}</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                Đăng Ký
+                            </button>
+
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="cal" id="tin_hoc_van_phong_mos">
+        <p class="head-title">Tin học văn phòng (MOS)</p>
+        <div class="cal_infomation">
+            <div>
+                <p>
+                    <i>
+                        (1) MOS_W: MOS WORD<br/>
+                        (2) MOS_E: MOS EXCEL<br/>
+                        (3) MOS_P: MOS POWERPOINT
+                    </i>
+                </p>
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th>Mã Khóa Học</th>
+                        <th>Tên Lớp Học</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
+                        <th>Lịch khai giảng</th>
+                        <th>Địa điểm học</th>
+                        <th>Học Phí</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
+                    <tr>
+                        {% if course.type == mosofficeautomation %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname.name}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                        <td>{{course.price}}</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                Đăng Ký
+                            </button>
+
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="cal" id="mang_may_tinh">
+        <p class="head-title">Mạng máy tính</p>
+        <div class="cal_infomation">
+            <div>
+                <p>
+                    <i>
+                        (1) NMQTMVANM: Nhập môn quản trị mạng và An ninh mạng<br/>
+                        (2) QTHTM: Quản trị hạ tầng mạng<br/>
+                        (3) QTHTM: Quản trị hệ thống mạng<br/>
+                        (4) ANM: An ninh mạng
+                    </i>
+                </p>
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th>Mã Khóa Học</th>
+                        <th>Tên Lớp Học</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
+                        <th>Lịch khai giảng</th>
+                        <th>Địa điểm học</th>
+                        <th>Học Phí</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
+                    <tr>
+                        {% if course.type == computernetworking %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname.value}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                        <td>{{course.price}}</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                Đăng Ký
+                            </button>
+
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</section>
+
+<section>
+    <form method="post" action="{{url_for('calendar')}}">
+        <div>
+            <div class="cal_overplay"></div>
+            <div class="form_signup">
+                <p class="cal_close"><i class="fa-solid fa-circle-xmark"></i></p>
+                <p class="cal_detail">
+
+                    <label for="name">Họ Và Tên </label>
+                    <br/>
+                    <input type="text" placeholder="Họ và tên" id="name" value="{{current_user.ho_ten}}">
+                    <br/>
+                    <label for="dob">Ngày sinh</label>
+                    <br/>
+                    <input type="date" placeholder="Ngày sinh" id="dob" value="{{current_user.ngay_sinh}}">
+                    <br/>
+                    <label for="email">Địa chỉ Email</label>
+                    <br/>
+                    <input type="text" placeholder="Địa chỉ Email" id="email" value="{{current_user.email}}">
+                    <br/>
+                    <label for="phone_number">Số điện thoại</label>
+                    <br/>
+                    <input type="text" placeholder="Số điện thoại" id="phone_number" value="{{current_user.phone}}">
+                    <br/>
+                    <label for="address">Địa chỉ hiện tại</label>
+                    <br/>
+                    <input type="text" placeholder="Địa chỉ hiện tại" id="address" value="{{current_user.address}}">
+
+                </p>
+                <button class="btn btn-danger">Đăng Ký</button>
+            </div>
+        </div>
+    </form>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/calendar.js') }}"></script>
+{% endblock %}
