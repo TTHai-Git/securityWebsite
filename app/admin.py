@@ -27,13 +27,20 @@ class StatsView(AuthenticatedAdminBV):
 class LogoutView(BaseView):
     @expose('/')
     def index(self):
-        logout_user()
-
-        return redirect('/admin')
+        if current_user.user_role == UserRoleEnum.ADMIN:
+            logout_user()
+            return redirect('/admin')
+        else:
+            logout_user()
+            return redirect('/')
 
     def is_accessible(self):
         return current_user.is_authenticated
 
+class HomePageView(BaseView):
+    @expose('/')
+    def index(self):
+       return redirect('/')
 
 class CalendarCourseView(AuthenticatedAdminMV):
     column_display_pk = True
@@ -84,8 +91,8 @@ class UserView(AuthenticatedAdminMV):
         'email': "Email"
     }
 
-
-admin.add_view(StatsView(name='Thống kê báo cáo'))
-admin.add_view(LogoutView(name="Đăng xuất"))
+admin.add_view(HomePageView(name="Trang Chủ"))
 admin.add_view(CalendarCourseView(Course, db.session, name="Quản Lý Lịch Học"))
 admin.add_view(UserView(User, db.session, name="Quản Lý Người Dùng"))
+admin.add_view(StatsView(name='Thống kê báo cáo'))
+admin.add_view(LogoutView(name="Đăng xuất"))

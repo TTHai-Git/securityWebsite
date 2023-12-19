@@ -94,3 +94,4 @@ function sucessRegisterNofication(tongtienthanhtoan){
                         + 'HẸN GẶP LẠI BẠN SỚM NHẤT CÓ THỂ'
                     );
 }
+

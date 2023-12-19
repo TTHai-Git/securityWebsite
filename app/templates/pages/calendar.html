@@ -38,14 +38,16 @@
                         <td>{{course.endtime}}</td>
                         <td>{{course.startdate}}</td>
                         <td>{{course.address}}</td>
-                        <td>{{course.price}}</td>
+                        <td>{{"{:,.3f}".format(course.price)}} VNĐ</td>
+                        {% if current_user.is_authenticated %}
                         <td>
                             <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
-                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                    '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
                                 Đăng Ký
                             </button>
 
                         </td>
+                        {% endif %}
                         {% endif %}
                     </tr>
                     {% endfor %}
@@ -89,14 +91,16 @@
                         <td>{{course.endtime}}</td>
                         <td>{{course.startdate}}</td>
                         <td>{{course.address}}</td>
-                        <td>{{course.price}}</td>
-                        <td>
-                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
-                                    '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
-                                Đăng Ký
-                            </button>
+                        <td>{{"{:,.3f}".format(course.price)}} VNĐ</td>
+                            {% if current_user.is_authenticated %}
+                            <td>
+                                <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                        '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                    Đăng Ký
+                                </button>
 
-                        </td>
+                            </td>
+                            {% endif %}
                         {% endif %}
                     </tr>
                     {% endfor %}
@@ -140,14 +144,16 @@
                         <td>{{course.endtime}}</td>
                         <td>{{course.startdate}}</td>
                         <td>{{course.address}}</td>
-                        <td>{{course.price}}</td>
-                        <td>
-                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
-                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
-                                Đăng Ký
-                            </button>
+                        <td>{{"{:,.3f}".format(course.price)}} VNĐ</td>
+                            {% if current_user.is_authenticated %}
+                            <td>
+                                <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                        '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                    Đăng Ký
+                                </button>
 
-                        </td>
+                            </td>
+                            {% endif %}
                         {% endif %}
                     </tr>
                     {% endfor %}
@@ -191,14 +197,16 @@
                         <td>{{course.endtime}}</td>
                         <td>{{course.startdate}}</td>
                         <td>{{course.address}}</td>
-                        <td>{{course.price}}</td>
-                        <td>
-                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
-                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
-                                Đăng Ký
-                            </button>
+                        <td>{{"{:,.3f}".format(course.price)}} VNĐ</td>
+                            {% if current_user.is_authenticated %}
+                            <td>
+                                <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                        '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                    Đăng Ký
+                                </button>
 
-                        </td>
+                            </td>
+                            {% endif %}
                         {% endif %}
                     </tr>
                     {% endfor %}
@@ -243,14 +251,16 @@
                         <td>{{course.endtime}}</td>
                         <td>{{course.startdate}}</td>
                         <td>{{course.address}}</td>
-                        <td>{{course.price}}</td>
-                        <td>
-                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
-                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
-                                Đăng Ký
-                            </button>
+                        <td>{{"{:,.3f}".format(course.price)}}</td>
+                            {% if current_user.is_authenticated %}
+                            <td>
+                                <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                        '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                    Đăng Ký
+                                </button>
 
-                        </td>
+                            </td>
+                            {% endif %}
                         {% endif %}
                     </tr>
                     {% endfor %}
@@ -298,14 +308,16 @@
                         <td>{{course.endtime}}</td>
                         <td>{{course.startdate}}</td>
                         <td>{{course.address}}</td>
-                        <td>{{course.price}}</td>
-                        <td>
-                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
-                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
-                                Đăng Ký
-                            </button>
+                        <td>{{"{:,.3f}".format(course.price)}} VNĐ</td>
+                            {% if current_user.is_authenticated %}
+                            <td>
+                                <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                        '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                    Đăng Ký
+                                </button>
 
-                        </td>
+                            </td>
+                            {% endif %}
                         {% endif %}
                     </tr>
                     {% endfor %}
@@ -349,13 +361,16 @@
                         <td>{{course.endtime}}</td>
                         <td>{{course.startdate}}</td>
                         <td>{{course.address}}</td>
-                        <td>{{course.price}}</td>
-                        <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
-                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
-                            Đăng Ký
-                        </button>
+                        <td>{{"{:,.3f}".format(course.price)}} VNĐ</td>
+                            {% if current_user.is_authenticated %}
+                            <td>
+                                <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                        '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                    Đăng Ký
+                                </button>
 
-                        </td>
+                            </td>
+                            {% endif %}
                         {% endif %}
                     </tr>
                     {% endfor %}
@@ -399,14 +414,16 @@
                         <td>{{course.endtime}}</td>
                         <td>{{course.startdate}}</td>
                         <td>{{course.address}}</td>
-                        <td>{{course.price}}</td>
-                        <td>
-                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
-                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
-                                Đăng Ký
-                            </button>
+                        <td>{{"{:,.3f}".format(course.price)}} VNĐ</td>
+                            {% if current_user.is_authenticated %}
+                            <td>
+                                <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                        '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                    Đăng Ký
+                                </button>
 
-                        </td>
+                            </td>
+                            {% endif %}
                         {% endif %}
                     </tr>
                     {% endfor %}
@@ -450,14 +467,16 @@
                         <td>{{course.endtime}}</td>
                         <td>{{course.startdate}}</td>
                         <td>{{course.address}}</td>
-                        <td>{{course.price}}</td>
-                        <td>
-                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
-                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
-                                Đăng Ký
-                            </button>
+                        <td>{{"{:,.3f}".format(course.price)}} VNĐ</td>
+                            {% if current_user.is_authenticated %}
+                            <td>
+                                <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                        '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                    Đăng Ký
+                                </button>
 
-                        </td>
+                            </td>
+                            {% endif %}
                         {% endif %}
                     </tr>
                     {% endfor %}
@@ -502,14 +521,16 @@
                         <td>{{course.endtime}}</td>
                         <td>{{course.startdate}}</td>
                         <td>{{course.address}}</td>
-                        <td>{{course.price}}</td>
-                        <td>
-                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
-                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
-                                Đăng Ký
-                            </button>
+                        <td>{{"{:,.3f}".format(course.price)}} VNĐ</td>
+                            {% if current_user.is_authenticated %}
+                            <td>
+                                <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname.name}}', '{{course.starttime}}',
+                                        '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type.name}}',{{course.price}})">
+                                    Đăng Ký
+                                </button>
 
-                        </td>
+                            </td>
+                            {% endif %}
                         {% endif %}
                     </tr>
                     {% endfor %}

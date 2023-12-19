@@ -25,7 +25,7 @@
         <td>{{c.startdate}}</td>
         <td>{{c.address}}</td>
         <td>{{c.type}}</td>
-        <td>{{c.price}}</td>
+        <td>{{"{:,.3f}".format(c.price)}}</td>
         <td>
             <input class="form-control" type="number" value="{{c.quantity}}"/>
         </td>
